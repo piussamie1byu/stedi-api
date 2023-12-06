@@ -67,22 +67,22 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: prod-stedi-pius-ingress
+  name: prod-stedi-pius-certificate
   annotations:
     kubernetes.io/ingress.global-static-ip-name: prod-stedi-pius-public # This IP has not been created yet - need to create first
     networking.gke.io/managed-certificates: prod-stedi-pius-certificate
     # kubernetes.io/ingress.allow-http: "false"
 spec:
   rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: prod-stedi-pius-nodeport # This needs to match line 53
-            port:
-              number: 80
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: prod-stedi-pius-nodeport # This needs to match line 53
+                port:
+                  number: 80
 ---
 apiVersion: networking.gke.io/v1
 kind: ManagedCertificate
@@ -91,4 +91,4 @@ metadata:
 spec:
   domains:
     - pius.cit262.com # This is a DNS record that has not been created yet - we need to create that first
-    
+
