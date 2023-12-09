@@ -4,7 +4,7 @@
 apiVersion: apps/v1
 # The kind is the type of Kubernetes resource we are using
 # A deployment is when we run code on a a server
-kind: Deployment
+kind: deployment
 # Metadata is information related to the object we created in Kubernetes
 metadata:
   # The name here is the name of our deployment
