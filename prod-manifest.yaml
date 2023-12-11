@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: prod-stedi-pius
-        image: us-docker.pkg.dev/my-devops-team-404512/pius-api/stedi-api:latest # This image needs to refer to the NEW Artifact registry repositorry
+        image: ugcr.io/cubs-consulting/stedi # This image needs to refer to the NEW Artifact registry repositorry
         env:
         - name: REDIS_PASSWORD
           valueFrom:
@@ -67,7 +67,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: prod-stedi-pius-certificate
+  name: prod-stedi-pius-ingress
   annotations:
     kubernetes.io/ingress.global-static-ip-name: prod-stedi-pius-public # This IP has not been created yet - need to create first
     networking.gke.io/managed-certificates: prod-stedi-pius-certificate
