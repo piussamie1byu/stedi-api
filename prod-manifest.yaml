@@ -65,7 +65,7 @@ spec:
     targetPort: 4567
 ---
 apiVersion: networking.k8s.io/v1
-kind: Ingress
+kind: ingress
 metadata:
   name: prod-stedi-pius-ingress
   annotations:
@@ -87,7 +87,7 @@ spec:
 apiVersion: networking.gke.io/v1
 kind: ManagedCertificate
 metadata:
-  name: prod-stedi-pius-certificate # This needs to match line 68
+  name: prod-stedi-pius-ingress # This needs to match line 68
 spec:
   domains:
   - pius.cit262.com # This is a DNS record that has not been created yet - we need to create that first
