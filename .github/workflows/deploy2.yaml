@@ -9,8 +9,8 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: cluster-1 # Add your cluster name here.
   GKE_ZONE: us-central1 # Add your cluster zone here.
-  DEPLOYMENT_NAME: pius-api # Add your deployment name here.
-  IMAGE: pius-api
+  DEPLOYMENT_NAME: stedi-api # Add your deployment name here.
+  IMAGE: stedi-api
 
 jobs:
   setup-build-publish-deploy:
