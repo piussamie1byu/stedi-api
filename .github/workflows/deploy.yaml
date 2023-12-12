@@ -3,7 +3,7 @@ name: Build and Deploy to GKE
 on:
   push:
     branches:
-      - stedi_main
+      - stedi_main #This is the main branch but was rename to suite my needs
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
